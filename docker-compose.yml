@@ -1,0 +1,15 @@
+services:
+  sentiment-app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+      - ./logs:/app/logs
+    environment:
+      - CONFIDENCE_THRESHOLD=0.5
+      - MAX_TEXT_LENGTH=500
+      - DEBUG=False
+      - LOG_LEVEL=INFO
+    restart: unless-stopped

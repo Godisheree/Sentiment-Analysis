@@ -4,3 +4,15 @@ __pycache__/
 .env
 sqlite_mcp_server.db
 logs/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.streamlit/
+models/large_models/
+data/raw/
+*.pyo
+.DS_Store
+Thumbs.db

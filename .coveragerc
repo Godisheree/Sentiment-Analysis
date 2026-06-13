@@ -1,0 +1,21 @@
+[coverage:run]
+source = src
+omit =
+    src/app.py
+    src/app_improved.py
+    src/data_prep.py
+    src/deploy.py
+    src/eda.py
+    src/error_analysis.py
+    src/merge_real_data.py
+    src/predict.py
+    src/preprocess.py
+    src/train.py
+    src/train_advanced.py
+    src/train_improved.py
+    src/models/bert_sentiment.py
+    src/logger.py
+
+[coverage:report]
+fail_under = 80
+show_missing = true

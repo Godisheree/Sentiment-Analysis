@@ -1,12 +1,33 @@
-pandas>=2.0.0
+# Core ML & NLP
 numpy>=1.24.0
 scikit-learn>=1.2.0
-textblob>=0.17.1
-matplotlib>=3.7.0
-jupyter>=1.0.0
-streamlit>=1.30.0
+pandas>=2.0.0
 joblib>=1.3.0
+
+# Indonesian NLP
 sastrawi>=1.0.1
-xgboost>=2.0.0
-seaborn>=0.13.0
 nltk>=3.8.0
+textblob>=0.17.1
+
+# Deep Learning
+transformers>=4.30.0
+torch>=2.0.0
+
+# Web Framework
+streamlit>=1.30.0
+
+# Data Processing
+xgboost>=2.0.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.13.0
+
+# Testing & Quality
+pytest>=7.4.0
+pytest-cov>=4.1.0
+flake8>=6.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+tqdm>=4.65.0
