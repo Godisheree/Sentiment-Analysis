@@ -1,0 +1,21 @@
+text,clean_text,sentiment,predicted
+Fungsi semua normal tidak ada masalah,fungsi semua normal ada masalah,positive,neutral
+Produk berkualitas dengan harga yang wajar,produk kualitas harga wajar,positive,neutral
+Barang sampai tepat waktu dan sesuai pesanan,barang tepat waktu sesuai pesan,positive,neutral
+"Toko terpercaya, barang selalu ready stock",toko percaya barang selalu ready stock,positive,negative
+"Barang sesuai foto, tidak ada yang cacat",barang sesuai foto ada cacat,positive,negative
+"Seller amanah, barang dikirim sesuai pesanan",seller amanah barang kirim sesuai pesan,positive,neutral
+"Kualitas sangat rendah, tidak worth it",kualitas sangat rendah worth it,negative,positive
+Sangat tidak puas dengan produk ini,sangat puas produk,negative,positive
+"Seller tidak amanah, pesanan tidak pernah dikirim",seller amanah pesan pernah kirim,negative,positive
+"Packing asal-asalan, barang pecah saat sampai",packing asalasalan barang pecah sampai,negative,neutral
+Pengiriman delay berkali-kali tanpa kabar,kirim delay berkalikali kabar,negative,neutral
+Kualitas menurun drastis dari pembelian sebelumnya,kualitas turun drastis beli belum,negative,positive
+Tidak worth it untuk harganya,worth it harga,negative,positive
+Barang tidak sesuai spesifikasi yang dijanjikan,barang sesuai spesifikasi janji,negative,neutral
+Barang berfungsi sebagaimana mestinya,barang fungsi bagaimana mesti,neutral,positive
+bahan sangat puas sekali,bahan sangat puas sekali,positive,negative
+packaging ini puas,packaging puas,positive,negative
+produk puas sekali,produk puas sekali,positive,negative
+bahan sangat tidak puas tidak recommended,bahan sangat puas recommended,negative,positive
+barang berfungsi baik,barang fungsi baik,neutral,positive

@@ -1,0 +1,6 @@
+text,predicted_sentiment,confidence
+"Barang ini bagus banget, saya sangat puas dengan kualitasnya",positive,0.7019
+"Pelayanan sangat buruk, barang rusak dan tidak ada tanggapan",negative,0.6057
+"Produk sudah sampai, biasa saja sesuai harga",neutral,0.6403
+Sangat kecewa! Barang tidak sesuai gambar sama sekali,negative,0.7046
+"Lumayan oke untuk harga segini, tidak ada masalah",neutral,0.7465

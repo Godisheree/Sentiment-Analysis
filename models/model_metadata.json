@@ -1,0 +1,17 @@
+{
+  "model_name": "Naive Bayes",
+  "accuracy": 0.7771345875542692,
+  "f1_score": 0.7776201821483566,
+  "cv_mean": 0.7974508693554816,
+  "cv_std": 0.004579782935849531,
+  "best_params": {
+    "alpha": "0.5"
+  },
+  "n_features": 3000,
+  "n_samples": 3451,
+  "labels": [
+    "positive",
+    "neutral",
+    "negative"
+  ]
+}

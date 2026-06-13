@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+.env
+sqlite_mcp_server.db
+logs/
