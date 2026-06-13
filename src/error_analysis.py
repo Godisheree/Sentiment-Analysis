@@ -80,13 +80,6 @@ def advanced_clean(text):
     words = text.split()
     words = [w for w in words if w not in CUSTOM_STOPWORDS or w.startswith("NOT_")]
     text = ' '.join(words)
-    stemmed = []
-    for w in text.split():
-        if w.startswith("NOT_"):
-            stemmed.append("NOT_" + stemmer.stem(w[4:]))
-        else:
-            stemmed.append(stemmer.stem(w))
-    text = ' '.join(stemmed)
     return re.sub(r'\s+', ' ', text).strip()
 
 # ============================================================

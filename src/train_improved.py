@@ -153,10 +153,10 @@ print(f"      Loaded: {len(df)} samples")
 # --- Apply Preprocessing ---
 print("\n[2.3] Applying advanced preprocessing...")
 print("      - Slang normalization")
+print("      - Negation handling")
 print("      - Stopword removal (Indonesian)")
-print("      - Sastrawi stemming")
 
-df['clean_text'] = df['text'].apply(lambda x: advanced_clean(x))
+df['clean_text'] = df['text'].apply(lambda x: advanced_clean(x, use_stemming=False))
 
 # Remove empty after cleaning
 empty_count = (df['clean_text'].str.len() == 0).sum()

@@ -41,14 +41,13 @@ def handle_negation(text):
 def load_resources():
     model = joblib.load("models/best_model.pkl")
     tfidf = joblib.load("models/tfidf_vectorizer_improved.pkl")
-    stemmer = joblib.load("models/stemmer.pkl")
     stopword_remover = joblib.load("models/stopword_remover.pkl")
     with open("models/model_metadata.json") as f:
         metadata = json.load(f)
-    return model, tfidf, stemmer, stopword_remover, metadata
+    return model, tfidf, stopword_remover, metadata
 
 
-def advanced_clean(text, stemmer, stopword_remover):
+def advanced_clean(text, stopword_remover):
     if not isinstance(text, str):
         return ""
     text = text.lower()
@@ -62,18 +61,11 @@ def advanced_clean(text, stemmer, stopword_remover):
     words = text.split()
     words = [w for w in words if w not in CUSTOM_STOPWORDS or w.startswith("NOT_")]
     text = ' '.join(words)
-    stemmed = []
-    for w in text.split():
-        if w.startswith("NOT_"):
-            stemmed.append("NOT_" + stemmer.stem(w[4:]))
-        else:
-            stemmed.append(stemmer.stem(w))
-    text = ' '.join(stemmed)
     return re.sub(r'\s+', ' ', text).strip()
 
 
-def predict_sentiment(text, model, tfidf, stemmer, stopword_remover, threshold=0.5):
-    cleaned = advanced_clean(text, stemmer, stopword_remover)
+def predict_sentiment(text, model, tfidf, stopword_remover, threshold=0.5):
+    cleaned = advanced_clean(text, stopword_remover)
     vectorized = tfidf.transform([cleaned])
 
     if vectorized.nnz == 0:
@@ -101,7 +93,7 @@ st.set_page_config(
     layout="wide"
 )
 
-model, tfidf, stemmer, stopword_remover, metadata = load_resources()
+model, tfidf, stopword_remover, metadata = load_resources()
 
 # --- Header ---
 st.title("📊 Indonesian Sentiment Analysis")
@@ -142,7 +134,7 @@ with tab1:
 
     if analyze_btn and user_input.strip():
         sentiment, confidence, all_probs, cleaned = predict_sentiment(
-            user_input, model, tfidf, stemmer, stopword_remover, confidence_threshold
+            user_input, model, tfidf, stopword_remover, confidence_threshold
         )
 
         sentiment_colors = {'positive': '#2ecc71', 'negative': '#e74c3c', 'neutral': '#95a5a6', 'uncertain': '#f39c12'}
@@ -207,7 +199,7 @@ with tab1:
             lines = [l.strip() for l in batch_input.strip().split('\n') if l.strip()]
             batch_results = []
             for line in lines:
-                sent, conf, probs, cleaned = predict_sentiment(line, model, tfidf, stemmer, stopword_remover, confidence_threshold)
+                sent, conf, probs, cleaned = predict_sentiment(line, model, tfidf, stopword_remover, confidence_threshold)
                 batch_results.append({
                     'Text': line[:80],
                     'Sentiment': sent,
